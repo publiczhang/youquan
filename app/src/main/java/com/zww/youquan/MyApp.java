@@ -1,14 +1,10 @@
-package com.zww.youquan.base;
+package com.zww.youquan;
 
 import android.app.Application;
 
 public class MyApp extends Application {
 
     private static MyApp myApp;
-
-    private MyApp(){
-
-    }
 
     public static MyApp getInstance(){
         return myApp;
@@ -18,4 +14,5 @@ public class MyApp extends Application {
         super.onCreate();
         myApp=this;
     }
+
 }

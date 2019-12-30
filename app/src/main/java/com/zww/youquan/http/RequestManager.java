@@ -1,4 +1,4 @@
-package com.zww.youquan.base;
+package com.zww.youquan.http;
 
 import android.annotation.SuppressLint;
 import android.text.TextUtils;
@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.orhanobut.logger.Logger;
 import com.zww.youquan.BuildConfig;
+import com.zww.youquan.Config;
+import com.zww.youquan.MyApp;
+import com.zww.youquan.util.UMengUtil;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -33,7 +36,6 @@ import okio.Buffer;
 import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.internal.EverythingIsNonNull;
 
 public class RequestManager {
     private static RequestManager mInstance;
@@ -110,7 +112,7 @@ public class RequestManager {
             }
             if (!response.isSuccessful()) {
                 Log.e("response failed","url-->"+ request.url()+"-------------->code:"+response.code());
-                UmengUtil.reportError(MyApp.getInstance(), "FailCode:%s \\n url:%s", response.code(), request.url());
+                UMengUtil.reportError(MyApp.getInstance(), "FailCode:%s \\n url:%s", response.code(), request.url());
             }
             return response;
         }
