@@ -6,11 +6,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager2"
         android:layout_width="match_parent"
@@ -19,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:orientation="horizontal">
 
         <TextView
@@ -31,12 +26,20 @@
             android:text="@string/home" />
 
         <TextView
-            android:id="@+id/tab"
+            android:id="@+id/freeShipping"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="第二个Tab" />
+            android:text="@string/freeShipping" />
+
+        <TextView
+            android:id="@+id/collection"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/collection" />
 
         <TextView
             android:id="@+id/personalCenter"

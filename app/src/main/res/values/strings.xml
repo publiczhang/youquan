@@ -3,4 +3,6 @@
 
     <string name="home">首页</string>
     <string name="personalCenter">我的</string>
+    <string name="freeShipping">9.9包邮</string>
+    <string name="collection">收藏</string>
 </resources>
