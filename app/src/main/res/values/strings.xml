@@ -5,4 +5,5 @@
     <string name="personalCenter">我的</string>
     <string name="freeShipping">9.9包邮</string>
     <string name="collection">收藏</string>
+    <string name="versionCode">版本号</string>
 </resources>
