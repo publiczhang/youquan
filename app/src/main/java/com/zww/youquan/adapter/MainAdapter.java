@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.zww.youquan.base.BaseFragment;
+
 import com.zww.youquan.fragment.CollectionFragment;
+import com.zww.youquan.fragment.CommonHomeFragment;
 import com.zww.youquan.fragment.FreeShippingFragment;
 import com.zww.youquan.fragment.HomeFragment;
 import com.zww.youquan.fragment.PersonalCenterFragment;
