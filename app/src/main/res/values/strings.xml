@@ -6,4 +6,6 @@
     <string name="freeShipping">9.9包邮</string>
     <string name="collection">收藏</string>
     <string name="versionCode">版本号</string>
+    <string name="search_hint">搜索</string>
+    <string name="cancel">取消</string>
 </resources>

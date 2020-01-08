@@ -1,8 +1,9 @@
 package com.zww.youquan;
 
-import android.app.Application;
 
-public class MyApp extends Application {
+import androidx.multidex.MultiDexApplication;
+
+public class MyApp extends MultiDexApplication {
 
     private static MyApp myApp;
 

@@ -38,6 +38,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         loading = findViewById(R.id.loading);
         emptyLayout = findViewById(R.id.emptyLayout);
         content = initContent(contentHolder);
+        contentHolder.removeAllViews();
+        contentHolder.addView(content);
         errorLayout = findViewById(R.id.errorLayout);
         initViewModel();
     }
@@ -47,8 +49,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initViewModel();
 
     protected void showContentLayout(boolean showContent) {
-        contentHolder.removeAllViews();
-        contentHolder.addView(content);
         contentHolder.setVisibility(showContent ? View.VISIBLE : View.GONE);
     }
 

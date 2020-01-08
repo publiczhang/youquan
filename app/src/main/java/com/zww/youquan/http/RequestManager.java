@@ -13,10 +13,11 @@ import com.zww.youquan.Config;
 import com.zww.youquan.MyApp;
 import com.zww.youquan.util.UMengUtil;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.SecureRandom;
-import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
 
@@ -95,6 +96,7 @@ public class RequestManager {
 
     private class LoggerInterceptor implements Interceptor {
 
+        @NotNull
         @Override
         public Response intercept(@NonNull Chain chain) throws IOException {
             Request request = chain.request();
@@ -122,13 +124,13 @@ public class RequestManager {
 
         @SuppressLint("TrustAllX509TrustManager")
         @Override
-        public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        public void checkClientTrusted(X509Certificate[] chain, String authType) {
 
         }
 
         @SuppressLint("TrustAllX509TrustManager")
         @Override
-        public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        public void checkServerTrusted(X509Certificate[] chain, String authType) {
 
         }
 
