@@ -82,6 +82,8 @@ dependencies {
     implementation  'com.umeng.umsdk:analytics:8.0.0'
     implementation  'com.umeng.umsdk:common:2.0.0'
 
+    //RxPermissions
+    api 'com.github.tbruyelle:rxpermissions:0.10.2'
 
     //BRVAH
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta5'

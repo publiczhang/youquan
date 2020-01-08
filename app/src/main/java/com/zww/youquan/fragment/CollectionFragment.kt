@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.chad.library.adapter.base.module.LoadMoreModuleConfig
 import com.zww.youquan.R
-import com.zww.youquan.adapter.CollectionAdapater
+import com.zww.youquan.adapter.CollectionAdapter
 import com.zww.youquan.base.BaseFragment
 import com.zww.youquan.bean.Bean
 import io.reactivex.Observable
@@ -30,9 +30,9 @@ import java.util.concurrent.TimeUnit
 
  class CollectionFragment : BaseFragment() {
 
-    private var rv_list: RecyclerView? =  null
+    private var rvList: RecyclerView? =  null
     private var swipeLayout: SwipeRefreshLayout? =  null
-    private var mAdapter: CollectionAdapater? = null
+    private var mAdapter: CollectionAdapter? = null
     private var beans = ArrayList<Bean>()
     private var mDisposable: Disposable? = null
     private var pager = 5
@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit
         val  view  = inflater.inflate(R.layout.fragment_collection, container, false)
 
         initView(view)
-        rv_list?.layoutManager = LinearLayoutManager(context)
+        rvList?.layoutManager = LinearLayoutManager(context)
 
         initAdapter()
         initRefreshLayout()
@@ -58,23 +58,23 @@ import java.util.concurrent.TimeUnit
     }
 
 
-    fun initView(view:View){
-        rv_list = view.findViewById(R.id.rv_list)
+    private fun initView(view:View){
+        rvList = view.findViewById(R.id.rv_list)
         swipeLayout = view.findViewById(R.id.swipeLayout)
     }
 
     private fun initAdapter() {
-        mAdapter = CollectionAdapater()
+        mAdapter = CollectionAdapter()
         mAdapter?.animationEnable = true
         mAdapter?.loadMoreModule?.loadMoreView = LoadMoreModuleConfig.defLoadMoreView
         mAdapter?.setOnItemClickListener { adapter, view, position ->
             Toast.makeText(context, "收藏${position+1}", Toast.LENGTH_SHORT).show()
         }
-        rv_list?.adapter = mAdapter
+        rvList?.adapter = mAdapter
     }
 
     private fun addHeadView() {
-        val headView: View = layoutInflater.inflate(R.layout.collection_header_view, rv_list?.parent as ViewGroup, false)
+        val headView: View = layoutInflater.inflate(R.layout.collection_header_view, rvList?.parent as ViewGroup, false)
         mAdapter!!.addHeaderView(headView)
     }
 
