@@ -9,12 +9,17 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.zww.youquan.adapter.MainAdapter;
 import com.zww.youquan.base.BaseActivity;
+import com.zww.youquan.util.AliUtil;
+
 import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+
+import static com.alibaba.baichuan.android.trade.model.OpenType.Native;
+import static com.alibaba.baichuan.trade.biz.applink.adapter.AlibcFailModeType.AlibcNativeFailModeJumpH5;
 
 /**
  * MainActivity
@@ -94,6 +99,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                             showContentLayout(true);
                             showLoadingStatue(false);
                             mDisposable.dispose();
+                            AliUtil.openDeatailPage(MainActivity.this,"",Native,"taobao","",AlibcNativeFailModeJumpH5);
                         }
                     }
 

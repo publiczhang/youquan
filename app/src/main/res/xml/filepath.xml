@@ -4,6 +4,6 @@
     <paths>
         <external-files-path
             name="download"
-            path="" />
+            path="/update" />
     </paths>
 </resources>
