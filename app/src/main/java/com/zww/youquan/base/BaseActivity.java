@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.zww.youquan.R;
 
+/**
+ * BaseActivity
+ * @author zww
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected static int CURRENT_STATUE;
@@ -44,8 +48,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         initViewModel();
     }
 
+    /**
+     * initContent
+     *
+     * @param contentHolder contentHolder
+     * @return View
+     */
     protected abstract View initContent(ViewGroup contentHolder);
 
+    /**
+     * initViewModel
+     */
     protected abstract void initViewModel();
 
     protected void showContentLayout(boolean showContent) {

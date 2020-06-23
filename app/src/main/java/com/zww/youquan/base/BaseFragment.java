@@ -2,11 +2,13 @@ package com.zww.youquan.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -14,7 +16,7 @@ import androidx.fragment.app.Fragment;
  *
  * @author Administrator
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     protected Activity activity;
     protected Context context;
@@ -35,6 +37,18 @@ public class BaseFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
     }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initViewModel();
+    }
+
+    /**
+     * initViewModel
+     */
+    protected abstract void initViewModel();
 
     protected void showInput(View view) {
         InputMethodManager manager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);

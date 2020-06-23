@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -20,6 +22,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.zww.youquan.R;
 import com.zww.youquan.adapter.HomeAdapter;
 import com.zww.youquan.base.BaseFragment;
+import com.zww.youquan.viewmodel.HomeViewModel;
 
 /**
  * HomeFragment
@@ -30,6 +33,7 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
 
     private ViewPager2 homeViewPager2;
     private EditText searchEdit;
+    private HomeViewModel homeViewModel;
 
     @Nullable
     @Override
@@ -56,6 +60,11 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
     }
 
     @Override
+    protected void initViewModel() {
+        homeViewModel= ViewModelProviders.of(this).get(HomeViewModel.class);
+    }
+
+    @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             String trim = searchEdit.getText().toString().trim();
@@ -67,6 +76,5 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
         }
         return false;
     }
-
 
 }

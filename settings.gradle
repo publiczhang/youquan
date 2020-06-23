@@ -1,2 +1,2 @@
-include ':app', ':speechDemo'
+include ':app'
 rootProject.name='youquan'
