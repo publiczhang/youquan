@@ -29,6 +29,9 @@ import java.util.concurrent.TimeUnit
  */
 
  class CollectionFragment : BaseFragment() {
+    override fun initViewModel() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private var rvList: RecyclerView? =  null
     private var swipeLayout: SwipeRefreshLayout? =  null

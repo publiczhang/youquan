@@ -22,4 +22,9 @@ public class FreeShippingFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_free_shipping,container,false);
     }
+
+    @Override
+    protected void initViewModel() {
+
+    }
 }

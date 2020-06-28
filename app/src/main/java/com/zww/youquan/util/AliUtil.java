@@ -65,19 +65,19 @@ public class AliUtil {
                     @Override
                     public void onTradeSuccess(AlibcTradeResult tradeResult) {
                         // 交易成功回调（其他情形不回调）
-                        AlibcLogger.i(TAG, "open detail page success");
-                        Log.e("test","open detail page success");
+//                        AlibcLogger.i(TAG, "open detail page success");
+//                        Log.e("test","open detail page success");
                     }
 
                     @Override
                     public void onFailure(int code, String msg) {
                         // 失败回调信息
-                        Log.e("test","open detail page onFailure");
-                        Log.e("test", "code=" + code + ", msg=" + msg);
-                        AlibcLogger.e(TAG, "code=" + code + ", msg=" + msg);
-                        if (code == -1) {
-                            Toast.makeText(activity, "唤端失败，失败模式为none", Toast.LENGTH_SHORT).show();
-                        }
+//                        Log.e("test","open detail page onFailure");
+//                        Log.e("test", "code=" + code + ", msg=" + msg);
+//                        AlibcLogger.e(TAG, "code=" + code + ", msg=" + msg);
+//                        if (code == -1) {
+//                            Toast.makeText(activity, "唤端失败，失败模式为none", Toast.LENGTH_SHORT).show();
+//                        }
                     }
                 });
         // 以显示传入url的方式打开页面（第二个参数是套件名称）

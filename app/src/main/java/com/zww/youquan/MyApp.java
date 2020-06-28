@@ -8,6 +8,10 @@ import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
+import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
 
 public class MyApp extends MultiDexApplication {
 
@@ -23,6 +27,16 @@ public class MyApp extends MultiDexApplication {
         initBaiChuanSDK();
     }
 
+    private void initLogger() {
+        //logger
+        FormatStrategy strategy = PrettyFormatStrategy.newBuilder()
+                .showThreadInfo(true)
+                .methodCount(2)
+                .tag("test")
+                .methodOffset(5)
+                .build();
+        Logger.addLogAdapter(new AndroidLogAdapter(strategy));
+    }
 
     private void initBaiChuanSDK(){
         AlibcTradeSDK.asyncInit(this, new AlibcTradeInitCallback() {

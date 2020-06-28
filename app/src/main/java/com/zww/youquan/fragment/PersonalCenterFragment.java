@@ -38,4 +38,9 @@ public class PersonalCenterFragment extends BaseFragment {
         recycler.setAdapter(adapter);
         return inflate;
     }
+
+    @Override
+    protected void initViewModel() {
+
+    }
 }

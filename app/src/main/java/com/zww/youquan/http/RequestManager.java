@@ -11,6 +11,7 @@ import com.orhanobut.logger.Logger;
 import com.zww.youquan.BuildConfig;
 import com.zww.youquan.Config;
 import com.zww.youquan.MyApp;
+import com.zww.youquan.util.ULogger;
 import com.zww.youquan.util.UMengUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -38,6 +39,10 @@ import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * RequestManager
+ * @author Administrator
+ */
 public class RequestManager {
     private static RequestManager mInstance;
     private Retrofit retrofit;
@@ -51,7 +56,7 @@ public class RequestManager {
                 .build();
     }
 
-    public static RequestManager getIntance() {
+    public static RequestManager getInstance() {
         if (null == mInstance) {
             mInstance = new RequestManager();
         }
@@ -71,7 +76,7 @@ public class RequestManager {
                 .readTimeout(15 * 1000, TimeUnit.MILLISECONDS)
                 .writeTimeout(15 * 1000, TimeUnit.MILLISECONDS);
         clientBuilder.addInterceptor(new HeaderInterceptor());
-        clientBuilder.addInterceptor(new LoggerInterceptor());
+        clientBuilder.addNetworkInterceptor(new LoggerInterceptor());
         return clientBuilder;
     }
 
@@ -108,8 +113,8 @@ public class RequestManager {
                     source.request(Long.MAX_VALUE);
                     Buffer buffer = source.buffer();
                     Charset charset = Charset.forName("UTF-8");
-                    Logger.i("request url: %s%nheader: %s%n body: %s%n", request.url(), request.headers(), (request.body() == null) + ":requstbody is null");
-                    Logger.json(buffer.clone().readString(charset));
+                    ULogger._i("request url: %s%nheader: %s%n body: %s%n", request.url(), request.headers(), String.valueOf(request.body() == null) + ":requstbody is null");
+                    ULogger._json(buffer.clone().readString(charset));
                 }
             }
             if (!response.isSuccessful()) {

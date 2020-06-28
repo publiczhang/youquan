@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +19,8 @@ public abstract class BaseFragment extends Fragment {
 
     protected Activity activity;
     protected Context context;
+    protected boolean autoLoadData;
+    private boolean isFristVisiableToUser;
 
     @Override
     public void onAttach(@NonNull Activity activity) {
@@ -36,6 +37,9 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
+//        if (isFristVisiableToUser&&autoLoadData){
+//            initViewModel();
+//        }
     }
 
 
@@ -49,6 +53,10 @@ public abstract class BaseFragment extends Fragment {
      * initViewModel
      */
     protected abstract void initViewModel();
+
+    protected void setAutoLoadData(boolean autoLoadData) {
+        this.autoLoadData = autoLoadData;
+    }
 
     protected void showInput(View view) {
         InputMethodManager manager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);

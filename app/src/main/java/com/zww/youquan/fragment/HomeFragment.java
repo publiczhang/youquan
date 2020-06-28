@@ -2,6 +2,7 @@ package com.zww.youquan.fragment;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +62,9 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
 
     @Override
     protected void initViewModel() {
+        Log.e("test","initViewModel");
         homeViewModel= ViewModelProviders.of(this).get(HomeViewModel.class);
+        homeViewModel.getHomeTabInfo();
     }
 
     @Override

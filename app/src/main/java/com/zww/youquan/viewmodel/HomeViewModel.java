@@ -1,11 +1,13 @@
 package com.zww.youquan.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 import com.zww.youquan.base.BaseViewModel;
+import com.zww.youquan.bean.OptimusMaterialBean;
 import com.zww.youquan.http.RequestManager;
 import com.zww.youquan.request.HomeService;
 
@@ -28,30 +30,31 @@ public class HomeViewModel extends BaseViewModel {
         homeTabResult = new MutableLiveData<>();
     }
 
-    private void getHomeTabInfo() {
-        RequestManager.getIntance().entry().create(HomeService.class)
-                .getHomeTab("")
+    public void getHomeTabInfo() {
+        Log.e("test","getHomeTabInfo");
+        RequestManager.getInstance().entry().create(HomeService.class)
+                .getHomeTab()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Object>() {
+                .subscribe(new Observer<OptimusMaterialBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        Log.e("test","onSubscribe");
                     }
 
                     @Override
-                    public void onNext(Object o) {
-
+                    public void onNext(OptimusMaterialBean o) {
+                        Log.e("test","onNext");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Log.e("test","onError:"+e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-
+                        Log.e("test","onComplete");
                     }
                 });
     }

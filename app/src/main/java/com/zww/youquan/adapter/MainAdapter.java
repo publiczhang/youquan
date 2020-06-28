@@ -36,7 +36,7 @@ public class MainAdapter extends FragmentStateAdapter {
             case 3:
                 return new PersonalCenterFragment();
             default:
-                return new BaseFragment();
+                return null;
         }
     }
 
