@@ -8,4 +8,6 @@
     <string name="versionCode">版本号</string>
     <string name="search_hint">搜索</string>
     <string name="cancel">取消</string>
+    <string name="goodGoods">有好货</string>
+    <string name="more">查看更多</string>
 </resources>

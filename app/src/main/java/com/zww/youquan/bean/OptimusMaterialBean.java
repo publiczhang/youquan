@@ -3,6 +3,10 @@ package com.zww.youquan.bean;
 import com.google.gson.annotations.SerializedName;
 import com.zww.youquan.base.BaseBean;
 
+/**
+ * OptimusMaterialBean
+ * @author zww
+ */
 public class OptimusMaterialBean extends BaseBean {
 
     @SerializedName("tbk_dg_optimus_material_response")

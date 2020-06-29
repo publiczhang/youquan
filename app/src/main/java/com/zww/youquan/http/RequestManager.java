@@ -2,7 +2,6 @@ package com.zww.youquan.http;
 
 import android.annotation.SuppressLint;
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -11,7 +10,6 @@ import com.orhanobut.logger.Logger;
 import com.zww.youquan.BuildConfig;
 import com.zww.youquan.Config;
 import com.zww.youquan.MyApp;
-import com.zww.youquan.util.ULogger;
 import com.zww.youquan.util.UMengUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -113,12 +111,12 @@ public class RequestManager {
                     source.request(Long.MAX_VALUE);
                     Buffer buffer = source.buffer();
                     Charset charset = Charset.forName("UTF-8");
-                    ULogger._i("request url: %s%nheader: %s%n body: %s%n", request.url(), request.headers(), String.valueOf(request.body() == null) + ":requstbody is null");
-                    ULogger._json(buffer.clone().readString(charset));
+                    Logger.i("request url: %s%nheader: %s%n body: %s%n", request.url(), request.headers(), (request.body() == null) + ":requstbody is null");
+                    Logger.json(buffer.clone().readString(charset));
                 }
             }
             if (!response.isSuccessful()) {
-                Log.e("response failed","url-->"+ request.url()+"-------------->code:"+response.code());
+                Logger.e("response failed","url-->"+ request.url()+"-------------->code:"+response.code());
                 UMengUtil.reportError(MyApp.getInstance(), "FailCode:%s \\n url:%s", response.code(), request.url());
             }
             return response;

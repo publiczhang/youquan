@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/goodPicture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/empty_image" />
+
+    <TextView
+        android:id="@+id/goodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/goodPicture"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="商品名称"
+        android:textColor="@color/text_dark"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/couponInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goodName"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/goodPicture"
+        android:text="优惠券信息"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/couponPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/couponInfo"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/goodPicture"
+        android:text="券后￥349" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/couponInfo"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/couponPrice"
+        android:text="￥899" />
+
+    <TextView
+        android:id="@+id/sellCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/couponPrice"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/goodPicture"
+        android:text="已售6173件" />
+
+</RelativeLayout>

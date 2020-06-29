@@ -95,33 +95,6 @@ dependencies {
     //BRVAH
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.0-beta5'
 
-    //百川
-    //安全黑匣子
-    implementation  'com.taobao.android:securityguardaar3:5.4.171@aar'
-    implementation 'com.taobao.android:securitybodyaar3:5.4.99@aar'
-    implementation 'com.taobao.android:avmpaar3:5.4.36@aar'
-    implementation 'com.taobao.android:sgmiddletieraar3:5.4.9@aar'
-
-    //mtop
-    implementation 'com.taobao.android:mtopsdk_allinone_open:3.1.2.5@jar'
-
-    //登录授权
-    implementation 'com.ali.auth.sdk:alibabauth_core:2.0.0.6@aar'
-    implementation 'com.ali.auth.sdk:alibabauth_ui:2.0.0.6@aar'
-    implementation 'com.ali.auth.sdk:alibabauth_ext:2.0.0.6@aar'
-
-    //appLink
-    implementation 'com.alibaba.sdk.android:alibc_link_partner:4.1.15@aar'
-
-    //ut
-    implementation 'com.taobao.android:utdid4all:1.5.2'
-    implementation 'com.alibaba.mtl:app-monitor-sdk:2.6.4.5_for_bc'
-
-    //基础电商组件
-    implementation 'com.alibaba.sdk.android:AlibcTradeCommon:4.0.0.8@aar'
-    implementation 'com.alibaba.sdk.android:AlibcTradeBiz:4.0.0.8@aar'
-    implementation 'com.alibaba.sdk.android:nb_trade:4.0.0.8@aar'
-
     implementation 'com.alibaba:fastjson:1.2.41'
 
 }

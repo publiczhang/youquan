@@ -1,7 +1,6 @@
 package com.zww.youquan.viewmodel;
 
 import android.app.Application;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
@@ -23,7 +22,7 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class HomeViewModel extends BaseViewModel {
 
-    private MutableLiveData<Integer> homeTabResult;
+    public MutableLiveData<OptimusMaterialBean> homeTabResult;
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
@@ -31,30 +30,26 @@ public class HomeViewModel extends BaseViewModel {
     }
 
     public void getHomeTabInfo() {
-        Log.e("test","getHomeTabInfo");
         RequestManager.getInstance().entry().create(HomeService.class)
-                .getHomeTab()
+                .getHomeTab("4092",1,10)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<OptimusMaterialBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        Log.e("test","onSubscribe");
                     }
 
                     @Override
-                    public void onNext(OptimusMaterialBean o) {
-                        Log.e("test","onNext");
+                    public void onNext(OptimusMaterialBean bean) {
+                        homeTabResult.setValue(bean);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.e("test","onError:"+e.getMessage());
                     }
 
                     @Override
                     public void onComplete() {
-                        Log.e("test","onComplete");
                     }
                 });
     }

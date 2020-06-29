@@ -5,14 +5,23 @@ import com.zww.youquan.bean.OptimusMaterialBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
+/**
+ * HomeService
+ *
+ * @author zww
+ */
 public interface HomeService {
 
     /**
+     * 获取首页
      *
+     * @param parentId 物料Id
+     * @param page     page
+     * @param rows     rows
+     * @return OptimusMaterialBean
      */
-//    @GET("/tb/TaobaoClient")
-//    Observable<Object> getHomeTab(@Query("parentId") String parentId, @Query("page") int page, @Query("rows") int rows);
-    @GET("tb/TaobaoClient?parentId=9660&page=1&rows=1")
-    Observable<OptimusMaterialBean> getHomeTab();
+    @GET("/tb/TaobaoClient")
+    Observable<OptimusMaterialBean> getHomeTab(@Query("parentId") String parentId, @Query("page") int page, @Query("rows") int rows);
 }
