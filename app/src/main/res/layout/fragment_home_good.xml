@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/goodGoodsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -14,7 +14,7 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/more"
+        android:id="@+id/moreGoodGoods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -22,10 +22,10 @@
         android:layout_marginEnd="4dp"
         android:text="@string/more" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.zww.youquan.widget.RecyclerViewAtViewPager2
         android:id="@+id/goodRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:layout_below="@id/goodGoodsTitle"
         android:layout_marginTop="6dp" />
 </RelativeLayout>

@@ -29,9 +29,9 @@ public class HomeViewModel extends BaseViewModel {
         homeTabResult = new MutableLiveData<>();
     }
 
-    public void getHomeTabInfo() {
+    public void getHomeTabInfo(String parentId) {
         RequestManager.getInstance().entry().create(HomeService.class)
-                .getHomeTab("4092",1,10)
+                .getHomeTab(parentId,1,20)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<OptimusMaterialBean>() {

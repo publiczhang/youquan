@@ -1,11 +1,15 @@
 package com.zww.youquan.adapter;
 
 import android.content.Context;
+import android.graphics.Paint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,9 +41,12 @@ public class GoodGoodsAdapter extends RecyclerView.Adapter<GoodGoodsAdapter.Good
 
     @Override
     public void onBindViewHolder(@NonNull GoodGoodsHolder holder, int position) {
-
+        holder.goodGoodsItemRoot.setOnClickListener(v -> {
+            Toast.makeText(context, "有好货" + position, Toast.LENGTH_SHORT).show();
+            Log.e("test", "有好货" + position);
+        });
+        holder.price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
     }
-//textview.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG);
 
     @Override
     public int getItemCount() {
@@ -50,11 +57,14 @@ public class GoodGoodsAdapter extends RecyclerView.Adapter<GoodGoodsAdapter.Good
     }
 
     static class GoodGoodsHolder extends RecyclerView.ViewHolder {
+
+        RelativeLayout goodGoodsItemRoot;
         ImageView goodPicture;
         TextView goodName, couponInfo, couponPrice, price, sellCount;
 
         GoodGoodsHolder(@NonNull View itemView) {
             super(itemView);
+            goodGoodsItemRoot = itemView.findViewById(R.id.goodGoodsItemRoot);
             goodPicture = itemView.findViewById(R.id.goodPicture);
             goodName = itemView.findViewById(R.id.goodName);
             couponInfo = itemView.findViewById(R.id.couponInfo);

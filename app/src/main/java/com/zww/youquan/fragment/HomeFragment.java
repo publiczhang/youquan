@@ -14,9 +14,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -37,6 +39,7 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
     private ViewPager2 homeViewPager2;
     private EditText searchEdit;
     private HomeViewModel homeViewModel;
+    private HomeAdapter homeAdapter;
 
     @Nullable
     @Override
@@ -58,18 +61,17 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
     private void initViewpager2(View view) {
         homeViewPager2 = view.findViewById(R.id.homeViewPager2);
         homeViewPager2.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-        HomeAdapter homeAdapter = new HomeAdapter(activity);
+        homeAdapter = new HomeAdapter(activity);
         homeViewPager2.setAdapter(homeAdapter);
     }
 
     @Override
     protected void initViewModel() {
-        Log.e("test","initViewModel");
-        homeViewModel= ViewModelProviders.of(this).get(HomeViewModel.class);
-        homeViewModel.getHomeTabInfo();
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+        homeViewModel.getHomeTabInfo("4092");
         homeViewModel.homeTabResult.observe(this, bean -> {
-            Log.e("test",bean.getOptimusMaterialResponse().getIsDefault());
-            Log.e("test",bean.getOptimusMaterialResponse().getResultList().getMapData().size()+"");
+            homeAdapter.setTopData(bean);
+            homeAdapter.setGoodGoodsData(bean);
         });
     }
 

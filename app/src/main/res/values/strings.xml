@@ -10,4 +10,5 @@
     <string name="cancel">取消</string>
     <string name="goodGoods">有好货</string>
     <string name="more">查看更多</string>
+    <string name="image_description">image description</string>
 </resources>

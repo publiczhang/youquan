@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.zww.youquan"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -97,4 +97,5 @@ dependencies {
 
     implementation 'com.alibaba:fastjson:1.2.41'
 
+    implementation project(path: ':bannerview')
 }
