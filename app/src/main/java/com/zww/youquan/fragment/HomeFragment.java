@@ -60,13 +60,14 @@ public class HomeFragment extends BaseFragment implements TextView.OnEditorActio
 
     private void initViewpager2(View view) {
         homeViewPager2 = view.findViewById(R.id.homeViewPager2);
-        homeViewPager2.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
+        homeViewPager2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         homeAdapter = new HomeAdapter(activity);
         homeViewPager2.setAdapter(homeAdapter);
     }
 
     @Override
     protected void initViewModel() {
+        Log.e("test", "initViewModel");
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         homeViewModel.getHomeTabInfo("4092");
         homeViewModel.homeTabResult.observe(this, bean -> {

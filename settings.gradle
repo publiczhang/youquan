@@ -1,2 +1,2 @@
-include ':app', ':bannerview'
+include ':app', ':bannerview', ':JsBridge'
 rootProject.name = 'youquan'

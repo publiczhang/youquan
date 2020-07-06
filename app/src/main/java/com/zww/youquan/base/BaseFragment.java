@@ -20,7 +20,7 @@ public abstract class BaseFragment extends Fragment {
     protected Activity activity;
     protected Context context;
     protected boolean autoLoadData;
-    private boolean isFristVisiableToUser;
+    private boolean isFirstVisibleToUser;
 
     @Override
     public void onAttach(@NonNull Activity activity) {
@@ -37,7 +37,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-//        if (isFristVisiableToUser&&autoLoadData){
+//        if (isFirstVisibleToUser&&autoLoadData){
 //            initViewModel();
 //        }
     }
