@@ -36,7 +36,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import com.alibaba.fastjson.JSON;
 import com.github.lzyzsd.jsbridge.BridgeHandler;
 import com.github.lzyzsd.jsbridge.BridgeWebView;
 import com.github.lzyzsd.jsbridge.BridgeWebViewClient;
@@ -86,7 +85,7 @@ public class WebFragment extends BaseFragment {
 
     private RelativeLayout titleLayout;
     private ImageView ivBack;
-    private TextView top_title;
+    private TextView topTitle;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -114,7 +113,7 @@ public class WebFragment extends BaseFragment {
     private void initTitle(View view) {
         titleLayout = view.findViewById(R.id.titleLayout);
         ivBack = view.findViewById(R.id.iv_back);
-        top_title = view.findViewById(R.id.top_title);
+        topTitle = view.findViewById(R.id.top_title);
     }
 
     public void backClick(View v) {
@@ -149,9 +148,9 @@ public class WebFragment extends BaseFragment {
             titleLayout.setVisibility(View.GONE);
         }
         if (!TextUtils.isEmpty(title)) {
-            top_title.setText(title);
+            topTitle.setText(title);
         } else {
-            top_title.setText("");
+            topTitle.setText("");
         }
         if (showBack) {
             ivBack.setVisibility(View.VISIBLE);
